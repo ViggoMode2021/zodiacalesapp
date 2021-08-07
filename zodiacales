@@ -1,0 +1,78 @@
+import pyttsx3
+from tkinter import *
+import random
+from PIL import Image, ImageTk
+root = Tk()
+root.geometry('500x500')
+root.title('zodiacal')
+root.config(bg='black')
+from pygame import mixer
+
+clicked = StringVar()
+clicked.set('signos zodiacales')
+
+'''
+global sag_image
+sag_image = PhotoImage(file='sagitario.png')
+global photo_label
+photo_label = Label(root, image=sag_image)
+'''
+
+def info():
+    global my_label
+    if clicked.get() == 'sagitario':
+        my_label = Label(root, text='23 de noviembre - 22 de diciembre. Eres sincero, honesto, generoso, y optimista').pack()
+        global engine
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('23 de noviembre - 22 de diciembre. Eres sincero, honesto, generoso, y optimista')
+        photo_label.pack()
+        engine.runAndWait()
+
+    if clicked.get() == 'escorpión':
+        my_label = Label(root, text='24 de octubre - 22 de noviembre. Eres nervioso, decidido, extremista, devoto').pack()
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('24 de octubre - 22 de noviembre. Eres nervioso, decidido, extremista, devoto')
+        engine.runAndWait()
+
+    if clicked.get() == 'capricornio':
+        my_label = Label(root, text='23 de diciembre - 20 de enero. Eres reservado, organizado, decidido').pack()
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('23 de diciembre - 20 de enero. Eres reservado, organizado, decidido')
+        engine.runAndWait()
+
+    if clicked.get() == 'acuario':
+        my_label = Label(root, text='21 de enero - 19 de febrero. Eres original, dinámico, intuitivo, curioso, espontáneo').pack()
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('21 de enero - 19 de febrero. Eres original, dinámico, intuitivo, curioso, espontáneo')
+        engine.runAndWait()
+
+    if clicked.get() == 'piscis':
+        my_label = Label(root, text='20 de febrero - 20 de marzo. Eres generoso, idealista, modesto, pacífico, espontáneo').pack()
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('20 de febrero - 20 de marzo. Eres generoso, idealista, modesto, pacífico, espontáneo')
+        engine.runAndWait()
+
+def eliminar():
+    my_label.config(' ')
+    photo_label.config(' ')
+
+drop = OptionMenu(root, clicked, 'sagitario', 'escorpión', 'capricornio', 'acuario', 'piscis', 'aries', 'tauro', 'geminis', 'cancer', 'leo', 'virgo', 'libra')
+drop.pack()
+
+horoscopo_button_dos = Button(root, text='Escuchar y leer horóscopo ', command=info)
+horoscopo_button_dos.pack()
+
+#eliminar_button = Button(root, text='Eliminar info', command=eliminar)
+#eliminar_button.place(x=50, y=50)
+
+root.mainloop()
