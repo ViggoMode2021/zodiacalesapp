@@ -11,62 +11,133 @@ from pygame import mixer
 clicked = StringVar()
 clicked.set('signos zodiacales')
 
-'''
+#sag photo label
 global sag_image
 sag_image = PhotoImage(file='sagitario.png')
-global photo_label
-photo_label = Label(root, image=sag_image)
-'''
+global photo_label_sag
+photo_label_sag = Label(root, image=sag_image)
 
-def info():
+#escorpio photo label
+global escorpio_image
+escorpio_image = PhotoImage(file='escorpio.png')
+global photo_label_escorpio
+photo_label_escorpio = Label(root, image=escorpio_image)
+
+
+def info(): #sag info
     global my_label
     if clicked.get() == 'sagitario':
-        my_label = Label(root, text='23 de noviembre - 22 de diciembre. Eres sincero, honesto, generoso, y optimista').pack()
+        my_label = Label(root, text='23 de noviembre - 22 de diciembre. Tú eres sincero, honesto, generoso, y optimista').pack()
         global engine
         engine = pyttsx3.init()
         voices = engine.getProperty('voices')
         engine.setProperty('voice', voices[2].id)
-        engine.say('23 de noviembre - 22 de diciembre. Eres sincero, honesto, generoso, y optimista')
-        photo_label.pack()
+        engine.say('23 de noviembre - 22 de diciembre. Tú eres sincero, honesto, generoso, y optimista')
+        photo_label_sag.place(x=8, y=8)
         engine.runAndWait()
 
-    if clicked.get() == 'escorpión':
-        my_label = Label(root, text='24 de octubre - 22 de noviembre. Eres nervioso, decidido, extremista, devoto').pack()
+    if clicked.get() == 'escorpio':
+        my_label = Label(root, text='24 de octubre - 22 de noviembre. Tú eres nervioso, decidido, extremista, y devoto').pack()
         engine = pyttsx3.init()
         voices = engine.getProperty('voices')
         engine.setProperty('voice', voices[2].id)
-        engine.say('24 de octubre - 22 de noviembre. Eres nervioso, decidido, extremista, devoto')
+        engine.say('24 de octubre - 22 de noviembre. Tú eres nervioso, decidido, extremista, y devoto')
+        photo_label_escorpio.place(x=8, y=180)
         engine.runAndWait()
 
     if clicked.get() == 'capricornio':
-        my_label = Label(root, text='23 de diciembre - 20 de enero. Eres reservado, organizado, decidido').pack()
+        my_label = Label(root, text='23 de diciembre - 20 de enero. Tú eres reservado, organizado, y decidido').pack()
         engine = pyttsx3.init()
         voices = engine.getProperty('voices')
         engine.setProperty('voice', voices[2].id)
-        engine.say('23 de diciembre - 20 de enero. Eres reservado, organizado, decidido')
+        engine.say('23 de diciembre - 20 de enero. Tú eres reservado, organizado, y decidido')
         engine.runAndWait()
 
     if clicked.get() == 'acuario':
-        my_label = Label(root, text='21 de enero - 19 de febrero. Eres original, dinámico, intuitivo, curioso, espontáneo').pack()
+        my_label = Label(root, text='21 de enero - 19 de febrero. Tú eres original, dinámico, intuitivo, curioso, y espontáneo').pack()
         engine = pyttsx3.init()
         voices = engine.getProperty('voices')
         engine.setProperty('voice', voices[2].id)
-        engine.say('21 de enero - 19 de febrero. Eres original, dinámico, intuitivo, curioso, espontáneo')
+        engine.say('21 de enero - 19 de febrero. Tú eres original, dinámico, intuitivo, curioso, y espontáneo')
         engine.runAndWait()
 
     if clicked.get() == 'piscis':
-        my_label = Label(root, text='20 de febrero - 20 de marzo. Eres generoso, idealista, modesto, pacífico, espontáneo').pack()
+        my_label = Label(root, text='20 de febrero - 20 de marzo. Tú eres generoso, idealista, modesto, pacífico, y espontáneo').pack()
         engine = pyttsx3.init()
         voices = engine.getProperty('voices')
         engine.setProperty('voice', voices[2].id)
-        engine.say('20 de febrero - 20 de marzo. Eres generoso, idealista, modesto, pacífico, espontáneo')
+        engine.say('20 de febrero - 20 de marzo. Tú eres generoso, idealista, modesto, pacífico, y reservado')
+        engine.runAndWait()
+
+    if clicked.get() == 'aries':
+        my_label = Label(root, text='21 de marzo - 20 de abril. Tú eres valiente, independiente, impaciente, y ambicioso').pack()
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('21 de marzo - 20 de abril. Tú eres valiente, independiente, impaciente, y ambicioso')
+        engine.runAndWait()
+
+    if clicked.get() == 'tauro':
+        my_label = Label(root, text='21 de abril - 21 de mayo. Tú eres tolerante, afortunado, y extravagante').pack()
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('21 de abril - 21 de mayo. Tú eres tolerante, afortunado, y extravagante')
+        engine.runAndWait()
+
+    if clicked.get() == 'géminis':
+        my_label = Label(root, text='22 de mayo - 21 de junio. Tú eres intelectual, flexible, intranquilo, y enérgico').pack()
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('22 de mayo - 21 de junio. Tú eres intelectual, flexible, intranquilo, y enérgico')
+        engine.runAndWait()
+
+    if clicked.get() == 'géminis':
+        my_label = Label(root, text='22 de mayo - 21 de junio. Tú eres intelectual, flexible, intranquilo, y enérgico').pack()
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('22 de mayo - 21 de junio. Tú eres intelectual, flexible, intranquilo, y enérgico')
+        engine.runAndWait()
+
+    if clicked.get() == 'cáncer':
+        my_label = Label(root, text='22 de mayo - 21 de junio. Tú eres intelectual, flexible, intranquilo, y enérgico').pack()
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('22 de mayo - 21 de junio. Tú eres intelectual, flexible, intranquilo, y enérgico')
+        engine.runAndWait()
+
+    if clicked.get() == 'leo':
+        my_label = Label(root, text='24 de julio - 23 de agosto. Tú eres responsable, arrogante, dramático, generoso, y ambicioso').pack()
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('24 de julio - 23 de agosto. Tú eres responsable, arrogante, dramático, generoso, y ambicioso')
+        engine.runAndWait()
+
+    if clicked.get() == 'virgo':
+        my_label = Label(root, text='24 de agosto - 23 de septiembre. Tú eres inteligente, lógico, intolerante, y organizado').pack()
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('24 de agosto - 23 de septiembre. Tú eres inteligente, lógico, intolerante, y organizado')
+        engine.runAndWait()
+
+    if clicked.get() == 'libra':
+        my_label = Label(root, text='24 de septiembre - 23 de octubre. Tú eres justo, sincero, romántico, y tolerante').pack()
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[2].id)
+        engine.say('24 de septiembre - 23 de octubre. Tú eres justo, sincero, romántico, y tolerante')
         engine.runAndWait()
 
 def eliminar():
     my_label.config(' ')
     photo_label.config(' ')
 
-drop = OptionMenu(root, clicked, 'sagitario', 'escorpión', 'capricornio', 'acuario', 'piscis', 'aries', 'tauro', 'geminis', 'cancer', 'leo', 'virgo', 'libra')
+drop = OptionMenu(root, clicked, 'sagitario', 'escorpio', 'capricornio', 'acuario', 'piscis', 'aries', 'tauro', 'géminis', 'cáncer', 'leo', 'virgo', 'libra')
 drop.pack()
 
 horoscopo_button_dos = Button(root, text='Escuchar y leer horóscopo ', command=info)
@@ -74,5 +145,7 @@ horoscopo_button_dos.pack()
 
 #eliminar_button = Button(root, text='Eliminar info', command=eliminar)
 #eliminar_button.place(x=50, y=50)
+
+
 
 root.mainloop()
